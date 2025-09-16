@@ -1,0 +1,476 @@
+/* Variables de colores y estilos */
+:root {
+  --primary: #2c7bb6;
+  --secondary: #4cb5ae;
+  --accent: #ff7e5f;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --gray: #6c757d;
+  --transition: all 0.3s ease;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+  --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Capas de maquetación */
+#container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#header {
+  background: var(--gradient);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+#nav {
+  background-color: white;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#content {
+  display: flex;
+  min-height: 600px;
+  flex-wrap: wrap;
+}
+
+#main-content {
+  flex: 3;
+  padding: 30px;
+  min-width: 300px;
+}
+
+#sidebar {
+  flex: 1;
+  background-color: var(--light);
+  padding: 30px;
+  min-width: 250px;
+  border-left: 1px solid #eee;
+}
+
+#footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Menú de navegación moderno */
+#nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+#nav ul li {
+  margin: 0;
+}
+
+#nav ul li a {
+  color: var(--dark);
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+#nav ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+#nav ul li a:hover {
+  color: var(--primary);
+  background-color: #f8f9fa;
+}
+
+#nav ul li a:hover:after {
+  width: 80%;
+}
+
+/* Estilos para tablas modernas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+table,
+th,
+td {
+  border: 1px solid #e0e0e0;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tr:hover {
+  background-color: #e9f7fe;
+  transition: var(--transition);
+}
+
+.special-cell {
+  background-color: var(--warning);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+/* Estilos para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow);
+}
+
+/* Estilos para formularios modernos */
+form {
+  margin: 25px 0;
+  background: white;
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(44, 123, 182, 0.2);
+  outline: none;
+}
+
+input[type="submit"] {
+  background: var(--gradient);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para elementos multimedia */
+.multimedia {
+  margin: 30px 0;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Marquesina moderna */
+marquee {
+  background: var(--gradient);
+  color: white;
+  padding: 15px;
+  margin: 25px 0;
+  border-radius: var(--radius);
+  font-weight: 500;
+  box-shadow: var(--shadow);
+}
+
+/* Animación mejorada */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animation {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: var(--gradient);
+  border-radius: 50%;
+  animation: floating 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+}
+
+/* Tarjetas modernas */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Botones modernos */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--gradient);
+  color: white;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Iconos modernos */
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--primary);
+}
+
+/* Mejoras de tipografía */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 15px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary);
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Contador de visitas moderno */
+.counter {
+  background: var(--gradient);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  display: inline-block;
+  margin: 20px 0;
+  font-weight: 500;
+  box-shadow: var(--shadow);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  #content {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+
+  #nav ul {
+    flex-direction: column;
+  }
+
+  #nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Efectos de hover para enlaces */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Mejora para el mapa de imagen */
+.image-map-container {
+  position: relative;
+  margin: 25px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Estilos para elementos de código */
+.code-block {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: var(--radius);
+  margin: 20px 0;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+}
+
+/* Mejora para la barra de progreso (simulada) */
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress {
+  height: 100%;
+  background: var(--gradient);
+  border-radius: 4px;
+  width: 75%;
+}
