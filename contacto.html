@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Portal para Nutriólogos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c7bb6;
+            --secondary: #4cb5ae;
+            --accent: #ff7e5f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        body {
+            background-color: var(--light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        #header {
+            background: var(--gradient);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        #nav {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav ul li {
+            margin: 0;
+        }
+
+        #nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        #nav ul li a:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        #content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 8px rgba(44, 123, 182, 0.2);
+        }
+
+        .btn {
+            background: var(--gradient);
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .faq {
+            margin-top: 40px;
+        }
+
+        .faq h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-item strong {
+            color: var(--secondary);
+        }
+
+        #footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        #footer a {
+            color: #fff;
+            margin: 0 10px;
+        }
+
+        @media(max-width: 768px) {
+            #content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+      <script>
+        if (localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        } else {
+            localStorage.pagecount = 1;
+        }
+        document.write('<div class="counter"><i class="fas fa-eye"></i> Visitas: ' + localStorage.pagecount + '</div>');
+    </script>
+    
+    <div id="container">
+        <!-- Header -->
+        <div id="header">
+            <h1><i class="fas fa-envelope"></i> Contáctanos</h1>
+            <p>Estamos aquí para resolver tus dudas y apoyarte en tu aprendizaje</p>
+        </div>
+
+        <!-- Navegación -->
+        <div id="nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="lenguajes.html"><i class="fas fa-code"></i> Lenguajes</a></li>
+                <li><a href="herramientas.html"><i class="fas fa-tools"></i> Herramientas</a></li>
+                <li><a href="proyectos.html"><i class="fas fa-project-diagram"></i> Proyectos</a></li>
+                <li><a href="contacto.html" style="color: var(--primary);"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Contenido -->
+        <div id="content">
+            <h2>Formulario de Contacto</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-at"></i> Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="asunto"><i class="fas fa-tag"></i> Asunto</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu mensaje" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
+            </form>
+
+            <!-- Preguntas frecuentes -->
+            <div class="faq">
+                <h3><i class="fas fa-question-circle"></i> Preguntas Frecuentes</h3>
+                <div class="faq-item">
+                    <strong>¿En cuánto tiempo responden?</strong>
+                    <p>Generalmente respondemos en un plazo de 24 a 48 horas.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>¿Puedo solicitar ayuda personalizada?</strong>
+                    <p>Sí, puedes pedir apoyo de un tutor mediante este formulario.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>¿Qué tipo de dudas puedo enviar?</strong>
+                    <p>Cualquier duda relacionada con la instalación, configuración o uso de las herramientas de desarrollo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <p>Portal de Programación para Nutriólogos - Universidad Autónoma de la Ciudad de México</p>
+            <p>© 2023 - Todos los derechos reservados</p>
+            <div style="margin-top: 15px;">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
