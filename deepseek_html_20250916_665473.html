@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes de Programación - Portal para Nutriólogos</title>
+    <!-- Mismo CSS que la página principal -->
+</head>
+<body>
+    <!-- Mismo header y nav que la página principal -->
+    
+    <div id="main-content">
+        <h2>Lenguajes de Programación para Nutriólogos</h2>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="changeTab('python')">Python</div>
+            <div class="tab" onclick="changeTab('html')">HTML/CSS</div>
+            <div class="tab" onclick="changeTab('javascript')">JavaScript</div>
+        </div>
+        
+        <div id="python" class="tab-content active">
+            <h3 id="python">Python para Nutrición</h3>
+            <p>Python es el lenguaje más recomendado para estudiantes de nutrición por su sintaxis clara y amplia aplicabilidad en análisis de datos.</p>
+            
+            <div class="code-block">
+# Ejemplo: Cálculo de calorías diarias recomendadas
+def calcular_calorias(genero, peso, altura, edad, actividad):
+    if genero.lower() == 'hombre':
+        tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * edad)
+    else:
+        tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * edad)
+    
+    # Factor de actividad: sedentario=1.2, ligero=1.375, moderado=1.55, activo=1.725
+    return tmb * actividad
+
+# Ejemplo de uso
+calorias = calcular_calorias('mujer', 65, 165, 28, 1.375)
+print(f"Calorías diarias recomendadas: {calorias:.2f}")
+            </div>
+            
+            <h4>Aplicaciones en nutrición:</h4>
+            <ul>
+                <li>Análisis de datos de pacientes</li>
+                <li>Cálculos nutricionales automatizados</li>
+                <li>Generación de reportes</li>
+                <li>Estadísticas de seguimiento</li>
+            </ul>
+        </div>
+        
+        <div id="html" class="tab-content">
+            <h3 id="html">HTML/CSS para Nutriólogos</h3>
+            <p>HTML y CSS son fundamentales para crear páginas web informativas y aplicaciones simples.</p>
+            
+            <div class="code-block">
+<!-- Ejemplo: Tabla de información nutricional -->
+<table>
+  <tr>
+    <th>Alimento</th>
+    <th>Calorías</th>
+    <th>Proteínas (g)</th>
+    <th>Carbohidratos (g)</th>
+  </tr>
+  <tr>
+    <td>Manzana</td>
+    <td>52</td>
+    <td>0.3</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>Pechuga de pollo</td>
+    <td>165</td>
+    <td>31</td>
+    <td>0</td>
+  </tr>
+</table>
+            </div>
+        </div>
+        
+        <div id="javascript" class="tab-content">
+            <h3 id="javascript">JavaScript para Nutriólogos</h3>
+            <p>JavaScript permite crear aplicaciones interactivas para cálculos nutricionales.</p>
+            
+            <div class="code-block">
+// Ejemplo: Calculadora de IMC interactiva
+function calcularIMC() {
+    let peso = document.getElementById('peso').value;
+    let altura = document.getElementById('altura').value;
+    
+    let imc = peso / (altura * altura);
+    let resultado = "";
+    
+    if (imc < 18.5) resultado = "Bajo peso";
+    else if (imc < 25) resultado = "Peso normal";
+    else if (imc < 30) resultado = "Sobrepeso";
+    else resultado = "Obesidad";
+    
+    document.getElementById('resultado').innerHTML = 
+        `IMC: ${imc.toFixed(2)} - ${resultado}`;
+}
+            </div>
+        </div>
+        
+        <!-- Tabla de comparación de lenguajes -->
+        <h3>Comparativa de Lenguajes</h3>
+        <table>
+            <tr>
+                <th>Lenguaje</th>
+                <th>Dificultad</th>
+                <th>Aplicación en Nutrición</th>
+                <th>Recursos</th>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>Media</td>
+                <td>Análisis de datos, cálculos</td>
+                <td><a href="recursos/python.pdf">Guía PDF</a></td>
+            </tr>
+            <tr>
+                <td>HTML/CSS</td>
+                <td>Baja</td>
+                <td>Páginas web informativas</td>
+                <td><a href="recursos/html.zip">Ejemplos</a></td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Media</td>
+                <td>Aplicaciones interactivas</td>
+                <td><a href="recursos/javascript.pdf">Tutorial</a></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Mismo sidebar y footer que la página principal -->
+    
+    <script>
+        function changeTab(tabName) {
+            // Ocultar todos los contenidos de pestañas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar la pestaña seleccionada
+            document.getElementById(tabName).classList.add('active');
+            
+            // Actualizar pestañas activas
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
