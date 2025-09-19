@@ -1,228 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación para Nutriólogos - Inicio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Contador de visitas (requerido en página principal) -->
-    <script>
-        // Contador de visitas moderno
-        if (localStorage.pagecount) {
-            localStorage.pagecount = Number(localStorage.pagecount) + 1;
-        } else {
-            localStorage.pagecount = 1;
-        }
-        document.write('<div class="counter"><i class="fas fa-eye"></i> Visitas: ' + localStorage.pagecount + '</div>');
-    </script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="icon" href="images/nutrilab_favicon.png" type="image/png"> -->
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <title>Software para nutriologos✅ </title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preload" href="css/style.css" as="style">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/contadorVistas.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    <!-- Capa principal -->
-    <div id="container">
-        <!-- Cabecera moderna -->
-        <div id="header">
-            <div class="header-overlay"></div>
-            <div class="header-content">
-                <h1><i class="fas fa-laptop-code icon"></i>Programación para Nutriólogos</h1>
-                <p>Recursos modernos para estudiantes de nutrición en materias de computación</p>
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+        <script src="js/mensajeInicio.js"></script>
+
+    </head>
+    <body>
+        <!-- Contador de visitas  -->
+        <!-- Capa principal -->
+        <div id="container">
+            <!-- Cabecera moderna -->
+            <div id="header">
+                <div class="header-overlay"></div>
+                <div class="header-content">
+                    <h1><i class="fas fa-laptop-code icon"></i>Programación para
+                        Nutriólogos</h1>
+                    <p>Recursos de ingeniería en software para estudiantes de
+                        nutrición en
+                        materias de computación y programación</p>
+                </div>
             </div>
-        </div>
-        
-        <!-- Menú de navegación moderno -->
-        <div id="nav">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="lenguajes.html"><i class="fas fa-code"></i> Lenguajes</a></li>
-                <li><a href="herramientas.html"><i class="fas fa-tools"></i> Herramientas</a></li>
-                <li><a href="proyectos.html"><i class="fas fa-project-diagram"></i> Proyectos</a></li>
-                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-            </ul>
-        </div>
-        
-        <!-- Contenido principal con dos capas -->
-        <div id="content">
-            <!-- Capa de contenido principal -->
-            <div id="main-content">
-                <h2>Bienvenido al Portal de Programación para Nutriólogos</h2>
-                
-                <div class="card">
-                    <div class="card-title">¿Por qué este portal?</div>
-                    <p>Este sitio está diseñado específicamente para estudiantes de nutrición que necesitan dominar conceptos de programación en sus materias de computación. Encontrarás recursos modernos, ejemplos prácticos y tutoriales paso a paso.</p>
-                    <div class="progress-bar">
-                        <div class="progress"></div>
+
+            <!-- Menú de navegación moderno -->
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i>
+                            Inicio</a></li>
+                    <li><a href="lenguajes.html"><i class="fas fa-code"></i>
+                            Lenguajes</a></li>
+                    <li><a href="herramientas.html"><i class="fas fa-tools"></i>
+                            Herramientas</a></li>
+                    <li><a href="proyectos.html"><i
+                                class="fas fa-project-diagram"></i>
+                            Proyectos</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i>
+                            Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Contenido principal con dos capas -->
+            <div id="content">
+                <!-- Capa de contenido principal -->
+                <div id="main-content">
+                    <h2>Bienvenido al Portal de Programación para
+                        Nutriólogos</h2>
+
+                    <div class="card">
+                        <div class="card-title">¿Por qué este portal?</div>
+                        <p>Este sitio está diseñado específicamente para
+                            estudiantes de nutrición que necesitan dominar
+                            conceptos de programación en sus materias de
+                            computación. Encontrarás recursos modernos, ejemplos
+                            prácticos y tutoriales paso a paso.</p>
+                        <!-- <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div> -->
+                        <!-- <p>Completa tu aprendizaje: 75%</p> -->
                     </div>
-                    <p>Completa tu aprendizaje: 75%</p>
+
+                    <!-- Mapa de imágenes -->
+                    <!-- <h3>Mapa de Imagen Interactivo</h3>
+                    <div class="image-map-container">
+                        <img src="imagenes/mapa_programacion.jpg"
+                            alt="Mapa de Programación" usemap="#programamap">
+                        <map name="programamap">
+                            <area shape="rect" coords="0,0,100,100" alt="Python"
+                                href="lenguajes.html#python">
+                            <area shape="circle" coords="200,200,50" alt="HTML"
+                                href="lenguajes.html#html">
+                            <area shape="poly"
+                                coords="300,100,400,200,350,300,250,300,200,200"
+                                alt="Proyectos" href="proyectos.html">
+                        </map>
+                    </div> -->
+
+                    <!-- Marquesina moderna -->
+                    <div class="marquee-container">
+                        <div class="marquee-content">
+                            <i class="fas fa-bullhorn"></i> ¡Bienvenido! Este
+                            portal te ayudará con tus materias de computación. |
+                            <i class="fas fa-book"></i> Nuevos tutoriales
+                            disponibles |
+                            <i class="fas fa-calendar"></i> Próximo webinar:
+                            Introducción a Python para Nutriólogos
+                        </div>
+                    </div>
+
+                    <!-- Tabla con más de 3 columnas y filas -->
+                    <h3>Lenguajes de Programación y su Aplicación en
+                        Nutrición</h3>
+                    <table>
+                        <tr>
+                            <th>Lenguaje</th>
+                            <th>Dificultad</th>
+                            <th>Aplicación en Nutrición</th>
+                            <th class="center-logo-table">Logo</th>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>Media</td>
+                            <td>Análisis de datos de pacientes</td>
+                            <td class="center-logo-table"><img src="images/python.png" alt="Python logo"
+                                    width="50"></td>
+                        </tr>
+                        <tr>
+                            <td>HTML/CSS</td>
+                            <td>Baja</td>
+                            <td>Creación de páginas web informativas</td>
+                            <td class="center-logo-table">
+                                <img src="images/html-5.png" alt="HTML logo"
+                                    width="50">
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Media</td>
+                            <td>Calculadoras nutricionales interactivas</td>
+                            <td class="special-cell center-logo-table">
+                                 <img src="images/js.png" alt="Javascript logo"
+                                    width="50">
+                                </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>Media-Alta</td>
+                            <td>Gestión de bases de datos de pacientes</td>
+                            <td class="center-logo-table"><img src="images/sql.png" alt="SQL logo"
+                                    width="50"></td>
+                        </tr>
+                    </table>
+
+                    <!-- Animación moderna -->
+                    <div class="multimedia">
+                        <h3><i class="fas fa-film"></i> Animación: Proceso de
+                            Programación</h3>
+                        <div class="animation">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+
+                    <!-- Video -->
+                    <div class="multimedia">
+                        <h3><i class="fas fa-video"></i> Video: Introducción a
+                            la Programación para Nutriólogos</h3>
+                        <video width="100%" controls
+                            style="border-radius: var(--radius);">
+                            <source src="videos/intro_programacion.mp4"
+                                type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+
+                    <!-- Enlaces de diferentes tipos -->
+                    <h3>Enlaces de Ejemplo</h3>
+                    <div class="card">
+                        <p><a href="#header"><i class="fas fa-arrow-up"></i>
+                                Enlace a un lugar de la misma página
+                                (subir)</a></p>
+                        <p><a href="lenguajes.html"><i class="fas fa-link"></i>
+                                Enlace a otra página dentro del sitio</a></p>
+                        <p><a href="https://www.uacm.edu.mx" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Enlace
+                                a un sitio externo (abre en nueva
+                                ventana)</a></p>
+                        <p><a href="documentos/guia_programacion.pdf"><i
+                                    class="fas fa-file-pdf"></i> Enlace a un
+                                documento PDF</a></p>
+                    </div>
+
+                  
                 </div>
-                
-                <!-- Mapa de imágenes -->
-                <h3>Mapa de Imagen Interactivo</h3>
-                <div class="image-map-container">
-                    <img src="imagenes/mapa_programacion.jpg" alt="Mapa de Programación" usemap="#programamap">
-                    <map name="programamap">
-                        <area shape="rect" coords="0,0,100,100" alt="Python" href="lenguajes.html#python">
-                        <area shape="circle" coords="200,200,50" alt="HTML" href="lenguajes.html#html">
-                        <area shape="poly" coords="300,100,400,200,350,300,250,300,200,200" alt="Proyectos" href="proyectos.html">
-                    </map>
-                </div>
-                
-                <!-- Marquesina moderna -->
-                <marquee behavior="scroll" direction="left">
-                    <i class="fas fa-bullhorn"></i> ¡Bienvenido! Este portal te ayudará con tus materias de computación. | 
-                    <i class="fas fa-book"></i> Nuevos tutoriales disponibles | 
-                    <i class="fas fa-calendar"></i> Próximo webinar: Introducción a Python para Nutriólogos
-                </marquee>
-                
-                <!-- Tabla con más de 3 columnas y filas -->
-                <h3>Lenguajes de Programación y su Aplicación en Nutrición</h3>
-                <table>
-                    <tr>
-                        <th>Lenguaje</th>
-                        <th>Dificultad</th>
-                        <th>Aplicación en Nutrición</th>
-                        <th>Imagen</th>
-                    </tr>
-                    <tr>
-                        <td>Python</td>
-                        <td>Media</td>
-                        <td>Análisis de datos de pacientes</td>
-                        <td><img src="imagenes/python.png" alt="Python logo" width="50"></td>
-                    </tr>
-                    <tr>
-                        <td>HTML/CSS</td>
-                        <td>Baja</td>
-                        <td>Creación de páginas web informativas</td>
-                        <td><img src="imagenes/html.png" alt="HTML logo" width="50"></td>
-                    </tr>
-                    <tr>
-                        <td>JavaScript</td>
-                        <td>Media</td>
-                        <td>Calculadoras nutricionales interactivas</td>
-                        <td class="special-cell"><i class="fas fa-star"></i> Especial</td>
-                    </tr>
-                    <tr>
-                        <td>SQL</td>
-                        <td>Media-Alta</td>
-                        <td>Gestión de bases de datos de pacientes</td>
-                        <td><img src="imagenes/sql.png" alt="SQL logo" width="50"></td>
-                    </tr>
-                </table>
-                
-                <!-- Animación moderna -->
-                <div class="multimedia">
-                    <h3><i class="fas fa-film"></i> Animación: Proceso de Programación</h3>
-                    <div class="animation">
-                        <i class="fas fa-code"></i>
+
+                <!-- Barra lateral (segunda capa) -->
+                <div id="sidebar">
+                    <h3><i class="fas fa-star"></i> Recursos Destacados</h3>
+                    <div class="card">
+                        <ul style="list-style-type: none;">
+                            <li><a href="tutoriales/python_basico.pdf"><i
+                                        class="fas fa-download"></i> Tutorial de
+                                    Python Básico</a></li>
+                            <li><a href="tutoriales/html_guia.pdf"><i
+                                        class="fas fa-download"></i> Guía de
+                                    HTML para Nutriólogos</a></li>
+                            <li><a href="ejemplos/calculadora_imc.zip"><i
+                                        class="fas fa-download"></i> Calculadora
+                                    de IMC (ejemplo)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Audio incrustado (no se reproduce automáticamente) -->
+                    <h3><i class="fas fa-volume-up"></i> Audio: Consejos para
+                        Programar</h3>
+                    <div class="card">
+                        <audio controls style="width: 100%;">
+                            <source src="audios/consejos_programacion.mp3"
+                                type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+
+                    <h3><i class="fas fa-lightbulb"></i> ¿Por qué aprender
+                        programación?</h3>
+                    <div class="card">
+                        <p>Como nutriólogo, la programación te puede ayudar
+                            a:</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Automatizar
+                                cálculos nutricionales</li>
+                            <li><i class="fas fa-check-circle"></i> Gestionar
+                                bases de datos de pacientes</li>
+                            <li><i class="fas fa-check-circle"></i> Crear
+                                herramientas interactivas</li>
+                            <li><i class="fas fa-check-circle"></i> Analizar
+                                datos de investigación</li>
+                        </ul>
+                        <a href="#" class="btn">Más información</a>
+                    </div>
+
+                    <!-- Formulario de contacto simplificado -->
+                    <h3><i class="fas fa-envelope"></i> Contacto Rápido</h3>
+                    <div class="card">
+                        <form>
+                            <input type="text" placeholder="Nombre">
+                            <input type="email" placeholder="Email">
+                            <textarea placeholder="Mensaje" rows="3"></textarea>
+                            <input type="submit" value="Enviar">
+                        </form>
                     </div>
                 </div>
-                
-                <!-- Video -->
-                <div class="multimedia">
-                    <h3><i class="fas fa-video"></i> Video: Introducción a la Programación para Nutriólogos</h3>
-                    <video width="100%" controls style="border-radius: var(--radius);">
-                        <source src="videos/intro_programacion.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                </div>
-                
-                <!-- Enlaces de diferentes tipos -->
-                <h3>Enlaces de Ejemplo</h3>
-                <div class="card">
-                    <p><a href="#header"><i class="fas fa-arrow-up"></i> Enlace a un lugar de la misma página (subir)</a></p>
-                    <p><a href="lenguajes.html"><i class="fas fa-link"></i> Enlace a otra página dentro del sitio</a></p>
-                    <p><a href="https://www.uacm.edu.mx" target="_blank"><i class="fas fa-external-link-alt"></i> Enlace a un sitio externo (abre en nueva ventana)</a></p>
-                    <p><a href="documentos/guia_programacion.pdf"><i class="fas fa-file-pdf"></i> Enlace a un documento PDF</a></p>
-                </div>
-                
-                <!-- Ejemplo de código -->
-                <h3>Ejemplo de Código Python</h3>
-                <div class="code-block">
-                    <pre># Calculadora de IMC para nutrición
-def calcular_imc(peso, altura):
-    """Calcula el Índice de Masa Corporal"""
-    return peso / (altura ** 2)
-
-def clasificar_imc(imc):
-    """Clasifica el IMC en categorías"""
-    if imc < 18.5:
-        return "Bajo peso"
-    elif imc < 25:
-        return "Peso normal"
-    elif imc < 30:
-        return "Sobrepeso"
-    else:
-        return "Obesidad"
-
-# Ejemplo de uso
-peso = 68  # kg
-altura = 1.75  # metros
-imc = calcular_imc(peso, altura)
-categoria = clasificar_imc(imc)
-print(f"IMC: {imc:.2f} - Categoría: {categoria}")</pre>
-                </div>
             </div>
-            
-            <!-- Barra lateral (segunda capa) -->
-            <div id="sidebar">
-                <h3><i class="fas fa-star"></i> Recursos Destacados</h3>
-                <div class="card">
-                    <ul style="list-style-type: none;">
-                        <li><a href="tutoriales/python_basico.pdf"><i class="fas fa-download"></i> Tutorial de Python Básico</a></li>
-                        <li><a href="tutoriales/html_guia.pdf"><i class="fas fa-download"></i> Guía de HTML para Nutriólogos</a></li>
-                        <li><a href="ejemplos/calculadora_imc.zip"><i class="fas fa-download"></i> Calculadora de IMC (ejemplo)</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Audio incrustado (no se reproduce automáticamente) -->
-                <h3><i class="fas fa-volume-up"></i> Audio: Consejos para Programar</h3>
-                <div class="card">
-                    <audio controls style="width: 100%;">
-                        <source src="audios/consejos_programacion.mp3" type="audio/mpeg">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
-                </div>
-                
-                <h3><i class="fas fa-lightbulb"></i> ¿Por qué aprender programación?</h3>
-                <div class="card">
-                    <p>Como nutriólogo, la programación te puede ayudar a:</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Automatizar cálculos nutricionales</li>
-                        <li><i class="fas fa-check-circle"></i> Gestionar bases de datos de pacientes</li>
-                        <li><i class="fas fa-check-circle"></i> Crear herramientas interactivas</li>
-                        <li><i class="fas fa-check-circle"></i> Analizar datos de investigación</li>
-                    </ul>
-                    <a href="#" class="btn">Más información</a>
-                </div>
-                
-                <!-- Formulario de contacto simplificado -->
-                <h3><i class="fas fa-envelope"></i> Contacto Rápido</h3>
-                <div class="card">
-                    <form>
-                        <input type="text" placeholder="Nombre">
-                        <input type="email" placeholder="Email">
-                        <textarea placeholder="Mensaje" rows="3"></textarea>
-                        <input type="submit" value="Enviar">
-                    </form>
+
+            <!-- Pie de página moderno -->
+            <div id="footer">
+                <p>Portal de Programación para Nutriólogos - Universidad
+                    Autónoma de la Ciudad de México</p>
+                <p>© 2023 - Todos los derechos reservados</p>
+                <div style="margin-top: 15px;">
+                    <a href="#" style="color: #fff; margin: 0 10px;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="color: #fff; margin: 0 10px;"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #fff; margin: 0 10px;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #fff; margin: 0 10px;"><i
+                            class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
-        
-        <!-- Pie de página moderno -->
-        <div id="footer">
-            <p>Portal de Programación para Nutriólogos - Universidad Autónoma de la Ciudad de México</p>
-            <p>© 2023 - Todos los derechos reservados</p>
-            <div style="margin-top: 15px;">
-                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
-                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
 
-    <!-- Script adicional -->
-    <script>
+        <!-- Script adicional -->
+        <script>
         // Función para mostrar u ocultar elementos
         function toggleElement(id) {
             var element = document.getElementById(id);
@@ -234,11 +277,11 @@ print(f"IMC: {imc:.2f} - Categoría: {categoria}")</pre>
         }
         
         // Mensaje de bienvenida moderno
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                alert("¡Bienvenido al Portal de Programación para Nutriólogos!\nExplora nuestros recursos para tus materias de computación.");
-            }, 1000);
-        });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     setTimeout(function() {
+        //         alert("¡Bienvenido al Portal de Programación para Nutriólogos!\nExplora nuestros recursos para tus materias de computación.");
+        //     }, 1000);
+        // });
         
         // Efecto de escritura para el título
         let i = 0;
@@ -256,5 +299,5 @@ print(f"IMC: {imc:.2f} - Categoría: {categoria}")</pre>
         // Descomenta la siguiente línea para activar el efecto de escritura
         // window.onload = typeWriter;
     </script>
-</body>
+    </body>
 </html>

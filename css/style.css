@@ -12,6 +12,8 @@
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --radius: 10px;
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  /* --gradientFav: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); */
+  --gradientFav: linear-gradient(#00b09b);
 }
 
 /* Estilos generales */
@@ -64,6 +66,11 @@ body {
 .header-content {
   position: relative;
   z-index: 2;
+  color: white;
+}
+
+.header-content h1 {
+  color: white;
 }
 
 #nav {
@@ -260,29 +267,40 @@ input[type="submit"]:hover {
 }
 
 /* Marquesina moderna */
-marquee {
-  background: var(--gradient);
-  color: white;
-  padding: 15px;
-  margin: 25px 0;
-  border-radius: var(--radius);
-  font-weight: 500;
-  box-shadow: var(--shadow);
+.marquee-container {
+    background: var(--gradient);
+    color: white;
+    padding: 15px;
+    margin: 25px 0;
+    border-radius: var(--radius);
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Esto oculta el texto que se sale del contenedor */
+    white-space: nowrap; /* Esto evita que el texto se salte de línea */
 }
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee-animation 15s linear infinite;
+    /* La animación se llama 'marquee-animation', dura 15 segundos, es lineal y se repite infinitamente. */
+}
+
+
+/* CENTRADO DE IMAGENES EN TABLA */
+.center-logo-table {
+    text-align: center;
+}
+
 
 /* Animación mejorada */
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(100%); /* Inicia fuera del contenedor, a la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera del contenedor, a la izquierda */
+    }
 }
-
 .animation {
   width: 100px;
   height: 100px;
@@ -396,6 +414,10 @@ p {
   margin: 20px 0;
   font-weight: 500;
   box-shadow: var(--shadow);
+}
+
+#sidebar h3 {
+  color: var(--gradientFav);
 }
 
 /* Responsividad */
