@@ -29,6 +29,3 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-
-// Descomenta la siguiente línea para activar el efecto de escritura
-// window.onload = typeWriter;
