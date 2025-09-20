@@ -1,4 +1,4 @@
-if (localStorage.pagecount) {
+if (localStorage.pagecount) { 
   localStorage.pagecount = Number(localStorage.pagecount) + 1;
 } else {
   localStorage.pagecount = 1;
