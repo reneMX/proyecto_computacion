@@ -7,23 +7,17 @@
         <title>Software para nutriologos✅ </title>
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="css/style.css">
-
         <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
         <script src="js/mensajeInicio.js"></script>
 
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
-            rel="stylesheet" />
-
         <style>
-        /* Mismos estilos que la página principal */
-        /* :root {
+            
+
+        :root {
             --primary: #2c7bb6;
             --secondary: #4cb5ae;
             --accent: #ff7e5f;
@@ -87,6 +81,7 @@
         .header-content {
             position: relative;
             z-index: 2;
+            
         }
 
         #nav {
@@ -419,7 +414,34 @@
         
         .tab-content.active {
             display: block;
-        } */
+        }
+        
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tool-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
     </style>
     </head>
     <body>
@@ -439,9 +461,9 @@
             <div id="header">
                 <div class="header-overlay"></div>
                 <div class="header-content">
-                    <h1><i class="fas fa-code icon"></i>Lenguajes de
-                        Programación</h1>
-                    <p>Recursos básicos y enfoque a nutrición</p>
+                    <h1><i class="fas fa-tools icon"></i>Herramientas de
+                        Desarrollo</h1>
+                    <p>Para estudiantes de nutrición</p>
                 </div>
             </div>
 
@@ -465,161 +487,118 @@
             <!-- Contenido principal -->
             <div id="content">
                 <div id="main-content">
-                    <h2>Lenguajes de Programación para Nutriólogos</h2>
+                    <h2>Herramientas Esenciales para Programación</h2>
 
-                    <div class="tabs">
-                        <div class="tab active"
-                            onclick="changeTab('python')">Python</div>
-                        <div class="tab"
-                            onclick="changeTab('html')">HTML/CSS</div>
-                        <div class="tab"
-                            onclick="changeTab('javascript')">JavaScript</div>
+                    <div class="card">
+                        <div class="card-title">¿Por qué necesitas estas
+                            herramientas?</div>
+                        <p>Las herramientas adecuadas te ayudarán a escribir
+                            código más eficientemente, detectar errores y
+                            colaborar en proyectos. Hemos seleccionado las más
+                            útiles para estudiantes de nutrición.</p>
                     </div>
 
-                    <div id="python" class="tab-content active">
-                        <h3 id="python">Python para Nutrición</h3>
-                        <p>Python es el lenguaje más recomendado para
-                            estudiantes de nutrición por su sintaxis clara y de
-                            aprendizaje rápido.</p>
+                    <!-- Grid de herramientas -->
+                    
 
-                        <div class="code-block">
-                            <pre><code class="language-python">
-# Ejemplo: Cálculo de calorías diarias recomendadas
-def calcular_calorias(genero, peso, altura, edad, actividad):
-    if genero.lower() == 'hombre':
-        tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * edad)
-    else:
-        tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * edad)
-
-    # Factor de actividad: sedentario=1.2, ligero=1.375, moderado=1.55, activo=1.725
-    return tmb * actividad
-
-# Ejemplo de uso
-calorias = calcular_calorias('mujer', 65, 165, 28, 1.375)
-print(f"Calorías diarias recomendadas: {calorias:.2f}")
-    </code></pre>
-                        </div>
-
-                        <h4>Aplicaciones en nutrición:</h4>
-                        <ul>
-                            <li>Análisis de datos de pacientes</li>
-                            <li>Cálculos nutricionales automatizados</li>
-                            <li>Generación de reportes</li>
-                            <li>Estadísticas de seguimiento</li>
-                        </ul>
-                    </div>
-
-                    <div id="html" class="tab-content">
-                        <h3 id="html">HTML/CSS para Nutriólogos</h3>
-                        <p>HTML y CSS son fundamentales para crear páginas web
-                            informativas y aplicaciones simples.</p>
-
-                        <div class="code-block">
-                            <!-- Ejemplo: Tabla de información nutricional -->
-                            <table>
-                                <tr>
-                                    <th>Alimento</th>
-                                    <th>Calorías</th>
-                                    <th>Proteínas (g)</th>
-                                    <th>Carbohidratos (g)</th>
-                                </tr>
-                                <tr>
-                                    <td>Manzana</td>
-                                    <td>52</td>
-                                    <td>0.3</td>
-                                    <td>14</td>
-                                </tr>
-                                <tr>
-                                    <td>Pechuga de pollo</td>
-                                    <td>165</td>
-                                    <td>31</td>
-                                    <td>0</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div id="javascript" class="tab-content">
-                        <h3 id="javascript">JavaScript para Nutriólogos</h3>
-                        <p>JavaScript permite crear aplicaciones interactivas
-                            para cálculos nutricionales.</p>
-
-                        <div class="code-block">
-                            <pre><code class="language-javascript">
-// Ejemplo: Calculadora de IMC interactiva
-function calcularIMC() {
-    let peso = document.getElementById('peso').value;
-    let altura = document.getElementById('altura').value;
-
-    let imc = peso / (altura * altura);
-    let resultado = "";
-
-    if (imc < 18.5) resultado = "Bajo peso";
-    else if (imc < 25) resultado = "Peso normal";
-    else if (imc < 30) resultado = "Sobrepeso";
-    else resultado = "Obesidad";
-
-    document.getElementById('resultado').innerHTML = `IMC: ${imc.toFixed(2)} - ${resultado}`;
-}
-    </code></pre>
-                        </div>
-
-                    </div>
-
-                    <!-- Tabla de comparación de lenguajes -->
-                    <h3>Comparativa de Lenguajes</h3>
+                    <!-- Tabla de comparación -->
+                    <h3>Comparativa de Herramientas</h3>
                     <table>
                         <tr>
-                            <th>Lenguaje</th>
+                            <th>Herramienta</th>
+                            <th>Tipo</th>
                             <th>Dificultad</th>
-                            <th>Aplicación en Nutrición</th>
-                            <th>Recursos</th>
+                            <th>Uso en Nutrición</th>
                         </tr>
                         <tr>
-                            <td>Python</td>
+                            <td>VS Code</td>
+                            <td>Editor de código</td>
                             <td>Media</td>
-                            <td>Análisis de datos, cálculos</td>
-                            <td><a href="recursos/python.pdf">Guía PDF</a></td>
+                            <td>Desarrollo de scripts y aplicaciones</td>
                         </tr>
                         <tr>
-                            <td>HTML/CSS</td>
+                            <td>Git</td>
+                            <td>Control de versiones</td>
+                            <td>Media-Alta</td>
+                            <td>Gestión de proyectos de análisis de datos</td>
+                        </tr>
+                        <tr>
+                            <td>Python IDLE</td>
+                            <td>IDE</td>
                             <td>Baja</td>
-                            <td>Páginas web informativas</td>
-                            <td><a href="recursos/html.zip">Ejemplos</a></td>
+                            <td>Ejecución de scripts de análisis
+                                nutricional</td>
                         </tr>
                         <tr>
-                            <td>JavaScript</td>
+                            <td>SQLite Browser</td>
+                            <td>Base de datos</td>
                             <td>Media</td>
-                            <td>Aplicaciones interactivas</td>
-                            <td><a
-                                    href="recursos/javascript.pdf">Tutorial</a></td>
+                            <td>Gestión de datos de pacientes y alimentos</td>
                         </tr>
                     </table>
 
-                    <!-- Marquee -->
+                   
+
+
+                     <!-- Marquee -->
                     <div class="marquee-container">
                         <div class="marquee-content">
-                            <i class="fas fa-bullhorn"></i> ¡Aprende los
-                            lenguajes
-                            más útiles para tu carrera! |
-                            <i class="fas fa-download"></i> Descarga nuestros
-                            recursos gratuitos
+                            <i class="fas fa-bullhorn"></i> ¡Descarga estas
+                        herramientas gratuitas! | |
+                            <i class="fas fa-download"></i> Tutoriales de instalación
+                        disponibles
                         </div>
                     </div>
 
-                    
 
+                  
                     <!-- Video -->
                     <div class="multimedia">
-                        <h3>🎥 Video: Introducción a
-                            Python</h3>
+                        <h3><i class="fas fa-video"></i> Video: Instalación de
+                            VS Code</h3>
                         <video width="100%" controls
                             style="border-radius: var(--radius);">
-                            <source src="public/videos/python_en_10_minutos.mp4"
+                            <source src="videos/instalacion_vscode.mp4"
                                 type="video/mp4">
                             Tu navegador no soporta el elemento de video.
                         </video>
                     </div>
+
+                    <!-- Guías de instalación -->
+                    <!-- <h3>Guías de Instalación</h3>
+                    <div class="card">
+                        <h4><i class="fas fa-download"></i> Cómo instalar
+                            Python</h4>
+                        <p>Sigue estos pasos para instalar Python en tu
+                            computadora:</p>
+                        <ol>
+                            <li>Visita <a
+                                    href="https://www.python.org/downloads/"
+                                    target="_blank">python.org/downloads</a></li>
+                            <li>Descarga la última versión para tu sistema
+                                operativo</li>
+                            <li>Ejecuta el instalador y marca la opción
+                                "Add Python to PATH"</li>
+                            <li>Completa la instalación y verifica desde la
+                                terminal con <code>python --version</code></li>
+                        </ol>
+                    </div>
+
+                    <div class="card">
+                        <h4><i class="fas fa-download"></i> Cómo instalar
+                            Git</h4>
+                        <p>Instalación paso a paso de Git:</p>
+                        <ol>
+                            <li>Visita <a href="https://git-scm.com/downloads"
+                                    target="_blank">git-scm.com/downloads</a></li>
+                            <li>Descarga la versión para tu sistema
+                                operativo</li>
+                            <li>Sigue las instrucciones del instalador con
+                                configuraciones predeterminadas</li>
+                            <li>Verifica la instalación con <code>git
+                                    --version</code> en la terminal</li>
+                        </ol>
+                    </div> -->
                 </div>
 
                 <!-- Barra lateral -->
@@ -636,7 +615,21 @@ function calcularIMC() {
                             <li><a href="ejemplos/calculadora_imc.zip"><i
                                         class="fas fa-download"></i> Calculadora
                                     de IMC (ejemplo)</a></li>
-<h3>Herramientas Principales</h3>
+                        </ul>
+                    </div>
+
+                    <!-- Audio incrustado -->
+                    <h3>🔊 Audio: Consejos para
+                        configurar tu entorno</h3>
+                    <div class="card">
+                        <audio controls style="width: 100%;">
+                            <source src="audios/consejos_entorno.mp3"
+                                type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+
+                    <h3>Herramientas Principales</h3>
                     <div class="tool-grid">
                         <div class="tool-card">
                             <div class="tool-icon"><i
@@ -648,16 +641,7 @@ function calcularIMC() {
                                 target="_blank" class="btn">Descargar</a>
                         </div>
 
-                        <div class="tool-card">
-                            <div class="tool-icon"><i
-                                    class="fab fa-git-alt"></i></div>
-                            <h4>Git</h4>
-                            <p>Sistema de control de versiones para gestionar
-                                tus proyectos de código.</p>
-                            <a href="https://git-scm.com/" target="_blank"
-                                class="btn">Descargar</a>
-                        </div>
-
+                     
                         <div class="tool-card">
                             <div class="tool-icon"><i
                                     class="fab fa-python"></i></div>
@@ -677,45 +661,12 @@ function calcularIMC() {
                             <a href="https://sqlitebrowser.org/" target="_blank"
                                 class="btn">Descargar</a>
                         </div>
-                    </div>                    </div>
-
-                    <!-- Audio incrustado -->
-                    <h3>🔊 Audio: Agrega Java Script a HTML</h3>
-                    <div class="card">
-                        <audio controls style="width: 100%;">
-                            <source src="public/audio/javascript_en_html.mp3"
-                                type="audio/mpeg">
-                            Tu navegador no soporta el elemento de audio.
-                        </audio>
                     </div>
 
-                    <h3>❓ ¿Por qué estos
-                        lenguajes?</h3>
-                    <div class="card">
-                        <p>He seleccionado estos lenguajes porque:</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Son los más
-                                utilizados en el ámbito científico</li>
-                            <li><i class="fas fa-check-circle"></i> Tienen una
-                                curva de aprendizaje suave</li>
-                            <li><i class="fas fa-check-circle"></i> Cuentan con
-                                amplia documentación</li>
-                            <li><i class="fas fa-check-circle"></i> Son
-                                versátiles y aplicables a nutrición</li>
-                        </ul>
-                    </div>
-
-                    <!-- Animación -->
-                    <div class="multimedia">
-                        <h3><i ></i>🎞️ Animación: Programación</h3>
-                        <div class="animation">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
 
-            <!-- Pie de página -->
             <div id="footer">
                 <img src="public/images/logo-uacm.png" alt width="50"
                     height="50">
@@ -740,37 +691,9 @@ function calcularIMC() {
                 </div>
 
             </div>
-        </div>
 
-        <script>
-
-        mensajeInicio("¡Explora los lenguajes de programación más útiles para nutrición!");
-        function changeTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            document.getElementById(tabName).classList.add('active');
-            
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-        }
-        
-
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     setTimeout(function() {
-        //         alert("¡Explora los lenguajes de programación más útiles para nutrición!");
-        //     }, 1000);
-        // });
-    </script>
-
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    </body>
-</html>
+            <script>
+                mensajeInicio("¡Configura tus herramientas de desarrollo correctamente!");
+            </script>
+        </body>
+    </html>
