@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Portal para Nutriólogos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c7bb6;
+            --secondary: #4cb5ae;
+            --accent: #ff7e5f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --radius: 10px;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #header {
+            background: var(--gradient);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        #nav {
+            background-color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #content {
+            display: flex;
+            min-height: 600px;
+            flex-wrap: wrap;
+        }
+
+        #main-content {
+            flex: 3;
+            padding: 30px;
+            min-width: 300px;
+        }
+
+        #sidebar {
+            flex: 1;
+            background-color: var(--light);
+            padding: 30px;
+            min-width: 250px;
+            border-left: 1px solid #eee;
+        }
+
+        #footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        #nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            flex-wrap: wrap;
+        }
+
+        #nav ul li {
+            margin: 0;
+        }
+
+        #nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        #nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        #nav ul li a:hover {
+            color: var(--primary);
+            background-color: #f8f9fa;
+        }
+
+        #nav ul li a:hover:after {
+            width: 80%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        table, th, td {
+            border: 1px solid #e0e0e0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e9f7fe;
+            transition: var(--transition);
+        }
+
+        .special-cell {
+            background-color: var(--warning);
+            color: var(--dark);
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow);
+        }
+
+        .multimedia {
+            margin: 30px 0;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        marquee {
+            background: var(--gradient);
+            color: white;
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: var(--radius);
+            font-weight: 500;
+            box-shadow: var(--shadow);
+        }
+
+        @keyframes floating {
+            0% {transform: translateY(0px);}
+            50% {transform: translateY(-10px);}
+            100% {transform: translateY(0px);}
+        }
+
+        .animation {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: var(--gradient);
+            border-radius: 50%;
+            animation: floating 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-title {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: white;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .counter {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            #content {
+                flex-direction: column;
+            }
+            
+            #sidebar {
+                border-left: none;
+                border-top: 1px solid #eee;
+            }
+            
+            #nav ul {
+                flex-direction: column;
+            }
+            
+            #nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .image-map-container {
+            position: relative;
+            margin: 25px 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f8f9fa;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            transition: var(--transition);
+        }
+        
+        .tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .gallery-item-content {
+            padding: 15px;
+        }
+        
+        .project-category {
+            margin: 30px 0;
+        }
+        
+        .project-category h3 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .featured-project {
+            background: var(--light);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            border-left: 5px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Contador de visitas -->
+   
+      <script>
+        if (localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        } else {
+            localStorage.pagecount = 1;
+        }
+        document.write('<div class="counter"><i class="fas fa-eye"></i> Visitas: ' + localStorage.pagecount + '</div>');
+    </script>
+
+    <!-- Capa principal -->
+    <div id="container">
+        <!-- Cabecera -->
+        <div id="header">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <h1><i class="fas fa-project-diagram icon"></i>Proyectos de Programación</h1>
+                <p>Para estudiantes de nutrición</p>
+            </div>
+        </div>
+        
+        <!-- Menú de navegación -->
+        <div id="nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="lenguajes.html"><i class="fas fa-code"></i> Lenguajes</a></li>
+                <li><a href="herramientas.html"><i class="fas fa-tools"></i> Herramientas</a></li>
+                <li><a href="proyectos.html"><i class="fas fa-project-diagram"></i> Proyectos</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div id="content">
+            <div id="main-content">
+                <h2>Proyectos de Programación para Nutriólogos</h2>
+                
+                <div class="card">
+                    <div class="card-title">¿Por qué realizar proyectos?</div>
+                    <p>Los proyectos prácticos te permiten aplicar los conceptos de programación a situaciones reales de nutrición. Desarrollarás habilidades técnicas mientras creas herramientas útiles para tu futura carrera profesional.</p>
+                </div>
+                
+                <!-- Proyecto destacado -->
+                <div class="featured-project">
+                    <h3><i class="fas fa-star"></i> Proyecto Destacado: Calculadora de IMC</h3>
+                    <p>Una aplicación web que calcula el Índice de Masa Corporal y proporciona recomendaciones personalizadas según los resultados.</p>
+                    <div class="code-block">
+// Código JavaScript para calcular IMC
+function calcularIMC() {
+    let peso = document.getElementById('peso').value;
+    let altura = document.getElementById('altura').value;
+    
+    if (peso > 0 && altura > 0) {
+        let imc = peso / (altura * altura);
+        let resultado = "";
+        
+        if (imc < 18.5) resultado = "Bajo peso - Consulte con un nutricionista";
+        else if (imc < 25) resultado = "Peso normal - ¡Mantenga sus hábitos saludables!";
+        else if (imc < 30) resultado = "Sobrepeso - Recomendamos modificar su dieta";
+        else resultado = "Obesidad - Es importante consultar con un especialista";
+        
+        document.getElementById('resultado').innerHTML = 
+            `IMC: ${imc.toFixed(2)} - ${resultado}`;
+    } else {
+        document.getElementById('resultado').innerHTML = 
+            "Por favor, ingrese valores válidos para peso y altura";
+    }
+}
+                    </div>
+                    <a href="proyectos/calculadora_imc.zip" class="btn"><i class="fas fa-download"></i> Descargar Proyecto Completo</a>
+                </div>
+                
+                <!-- Categorías de proyectos -->
+                <div class="project-category">
+                    <h3><i class="fas fa-calculator"></i> Proyectos de Cálculos Nutricionales</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="imagenes/proyecto_imc.jpg" alt="Calculadora de IMC">
+                            <div class="gallery-item-content">
+                                <h4>Calculadora de IMC</h4>
+                                <p>Calcula el índice de masa corporal con recomendaciones personalizadas.</p>
+                                <a href="proyectos/imc.zip" class="btn">Ver proyecto</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="imagenes/proyecto_calorias.jpg" alt="Calculadora de Calorías">
+                            <div class="gallery-item-content">
+                                <h4>Calculadora de Calorías</h4>
+                                <p>Determina el requerimiento calórico diario según actividad y metabolismo.</p>
+                                <a href="proyectos/calorias.zip" class="btn">Ver proyecto</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="imagenes/proyecto_macros.jpg" alt="Calculadora de Macronutrientes">
+                            <div class="gallery-item-content">
+                                <h4>Calculadora de Macronutrientes</h4>
+                                <p>Distribuye proporciones de proteínas, carbohidratos y grasas.</p>
+                                <a href="proyectos/macronutrientes.zip" class="btn">Ver proyecto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-category">
+                    <h3><i class="fas fa-database"></i> Proyectos de Gestión de Datos</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="imagenes/proyecto_pacientes.jpg" alt="Gestor de Pacientes">
+                            <div class="gallery-item-content">
+                                <h4>Gestor de Pacientes</h4>
+                                <p>Sistema para registrar y seguir el progreso de pacientes.</p>
+                                <a href="proyectos/pacientes.zip" class="btn">Ver proyecto</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="imagenes/proyecto_dietas.jpg" alt="Gestor de Planes de Dieta">
+                            <div class="gallery-item-content">
+                                <h4>Gestor de Planes de Dieta</h4>
+                                <p>Crear y modificar planes alimenticios personalizados.</p>
+                                <a href="proyectos/dietas.zip" class="btn">Ver proyecto</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="imagenes/proyecto_inventario.jpg" alt="Inventario de Alimentos">
+                            <div class="gallery-item-content">
+                                <h4>Inventario de Alimentos</h4>
+                                <p>Registra información nutricional de diversos alimentos.</p>
+                                <a href="proyectos/inventario.zip" class="btn">Ver proyecto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tabla de proyectos por semestre -->
+                <h3>Proyectos por Semestre</h3>
+                <table>
+                    <tr>
+                        <th>Semestre</th>
+                        <th>Proyecto</th>
+                        <th>Lenguaje</th>
+                        <th>Dificultad</th>
+                    </tr>
+                    <tr>
+                        <td>1°</td>
+                        <td>Calculadora de IMC básica</td>
+                        <td>Python</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>2°</td>
+                        <td>Registro de pacientes</td>
+                        <td>HTML/CSS/JS</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>3°</td>
+                        <td>Sistema de planificación de dietas</td>
+                        <td>Python + SQLite</td>
+                        <td>Media-Alta</td>
+                    </tr>
+                    <tr>
+                        <td>4°</td>
+                        <td>Análisis estadístico de datos nutricionales</td>
+                        <td>Python + Pandas</td>
+                        <td>Alta</td>
+                    </tr>
+                </table>
+                
+                <!-- Marquesina -->
+                <marquee behavior="scroll" direction="left">
+                    <i class="fas fa-bullhorn"></i> ¡Desarrolla proyectos reales para tu portafolio! | 
+                    <i class="fas fa-download"></i> Todos los proyectos incluyen código fuente y documentación
+                </marquee>
+                
+                <!-- Animación -->
+                <div class="multimedia">
+                    <h3><i class="fas fa-film"></i> Animación: Desarrollo de Proyectos</h3>
+                    <div class="animation">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+                
+                <!-- Video -->
+                <div class="multimedia">
+                    <h3><i class="fas fa-video"></i> Video: Cómo crear tu primer proyecto</h3>
+                    <video width="100%" controls style="border-radius: var(--radius);">
+                        <source src="videos/tutorial_proyectos.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+            
+            <!-- Barra lateral -->
+            <div id="sidebar">
+                <h3><i class="fas fa-star"></i> Proyectos Destacados</h3>
+                <div class="card">
+                    <ul style="list-style-type: none;">
+                        <li><a href="proyectos/calculadora_imc.zip"><i class="fas fa-download"></i> Calculadora de IMC</a></li>
+                        <li><a href="proyectos/registro_pacientes.zip"><i class="fas fa-download"></i> Registro de Pacientes</a></li>
+                        <li><a href="proyectos/planificador_dietas.zip"><i class="fas fa-download"></i> Planificador de Dietas</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Audio incrustado -->
+                <h3><i class="fas fa-volume-up"></i> Audio: Consejos para proyectos exitosos</h3>
+                <div class="card">
+                    <audio controls style="width: 100%;">
+                        <source src="audios/consejos_proyectos.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+                
+                <h3><i class="fas fa-lightbulb"></i> ¿Cómo empezar?</h3>
+                <div class="card">
+                    <p>Sigue estos pasos para desarrollar tus proyectos:</p>
+                    <ol>
+                        <li>Selecciona un proyecto acorde a tu nivel</li>
+                        <li>Descarga los recursos proporcionados</li>
+                        <li>Sigue los tutoriales paso a paso</li>
+                        <li>Personaliza y adapta a tus necesidades</li>
+                    </ol>
+                    <a href="tutoriales/guia_proyectos.pdf" class="btn">Guía Completa</a>
+                </div>
+                
+                <!-- Formulario de contacto para proyectos -->
+                <h3><i class="fas fa-envelope"></i> ¿Necesitas ayuda con tu proyecto?</h3>
+                <div class="card">
+                    <form>
+                        <input type="text" placeholder="Nombre" required>
+                        <input type="email" placeholder="Email" required>
+                        <select required>
+                            <option value="" disabled selected>Selecciona tu proyecto</option>
+                            <option value="imc">Calculadora de IMC</option>
+                            <option value="calorias">Calculadora de Calorías</option>
+                            <option value="pacientes">Gestor de Pacientes</option>
+                            <option value="dietas">Planificador de Dietas</option>
+                        </select>
+                        <textarea placeholder="Describe tu problema" rows="3" required></textarea>
+                        <input type="submit" value="Enviar consulta">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pie de página -->
+        <div id="footer">
+            <p>Portal de Programación para Nutriólogos - Universidad Autónoma de la Ciudad de México</p>
+            <p>© 2023 - Todos los derechos reservados</p>
+            <div style="margin-top: 15px;">
+                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                alert("¡Explora nuestros proyectos de programación aplicados a nutrición!");
+            }, 1000);
+        });
+        
+        // Script para el formulario de proyectos
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu consulta! Te responderemos en un plazo de 24 horas.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
