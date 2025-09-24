@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
         <title>Software para nutriologos✅ </title>
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <script type="text/javascript"
@@ -15,434 +16,35 @@
         <script src="js/mensajeInicio.js"></script>
 
         <style>
+
             
-
-        :root {
-            --primary: #2c7bb6;
-            --secondary: #4cb5ae;
-            --accent: #ff7e5f;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --success: #28a745;
-            --warning: #ffc107;
-            --danger: #dc3545;
-            --gray: #6c757d;
-            --transition: all 0.3s ease;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --radius: 10px;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f8f9fa;
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        #container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            overflow: hidden;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        #header {
-            background: var(--gradient);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.05);
-            z-index: 1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-            
-        }
-
-        #nav {
-            background-color: white;
-            padding: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        #content {
-            display: flex;
-            min-height: 600px;
-            flex-wrap: wrap;
-        }
-
-        #main-content {
-            flex: 3;
-            padding: 30px;
-            min-width: 300px;
-        }
-
-        #sidebar {
-            flex: 1;
-            background-color: var(--light);
-            padding: 30px;
-            min-width: 250px;
-            border-left: 1px solid #eee;
-        }
-
-        #footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        #nav ul {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            flex-wrap: wrap;
-        }
-
-        #nav ul li {
-            margin: 0;
-        }
-
-        #nav ul li a {
-            color: var(--dark);
-            text-decoration: none;
-            padding: 15px 20px;
-            display: block;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        #nav ul li a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--accent);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        #nav ul li a:hover {
-            color: var(--primary);
-            background-color: #f8f9fa;
-        }
-
-        #nav ul li a:hover:after {
-            width: 80%;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        table, th, td {
-            border: 1px solid #e0e0e0;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--primary);
-            color: white;
-            font-weight: 500;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        tr:hover {
-            background-color: #e9f7fe;
-            transition: var(--transition);
-        }
-
-        .special-cell {
-            background-color: var(--warning);
-            color: var(--dark);
-            font-weight: bold;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius);
-            transition: var(--transition);
-        }
-
-        img:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow);
-        }
-
-        .multimedia {
-            margin: 30px 0;
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        marquee {
-            background: var(--gradient);
-            color: white;
-            padding: 15px;
-            margin: 25px 0;
-            border-radius: var(--radius);
-            font-weight: 500;
-            box-shadow: var(--shadow);
-        }
-
-        @keyframes floating {
-            0% {transform: translateY(0px);}
-            50% {transform: translateY(-10px);}
-            100% {transform: translateY(0px);}
-        }
-
-        .animation {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            background: var(--gradient);
-            border-radius: 50%;
-            animation: floating 3s ease-in-out infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 40px;
-        }
-
-        .card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-title {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--gradient);
-            color: white;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .icon {
-            font-size: 24px;
-            margin-right: 10px;
-            color: var(--primary);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 15px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary);
-            display: inline-block;
-            margin-bottom: 25px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .counter {
-            background: var(--gradient);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 30px;
-            display: inline-block;
-            margin: 20px 0;
-            font-weight: 500;
-            box-shadow: var(--shadow);
-        }
-
-        @media (max-width: 768px) {
-            #content {
-                flex-direction: column;
+            .tool-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                margin: 20px 0;
             }
             
-            #sidebar {
-                border-left: none;
-                border-top: 1px solid #eee;
-            }
-            
-            #nav ul {
-                flex-direction: column;
-            }
-            
-            #nav ul li {
-                width: 100%;
+            .tool-card {
+                background: white;
+                border-radius: var(--radius);
+                padding: 20px;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
                 text-align: center;
             }
             
-            h1 {
-                font-size: 2rem;
+            .tool-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
             }
             
-            h2 {
-                font-size: 1.6rem;
+            .tool-icon {
+                font-size: 40px;
+                color: var(--primary);
+                margin-bottom: 15px;
             }
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--accent);
-        }
-
-        .image-map-container {
-            position: relative;
-            margin: 25px 0;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .code-block {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: var(--radius);
-            margin: 20px 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-        }
-
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background: #f8f9fa;
-            margin-right: 5px;
-            border-radius: 5px 5px 0 0;
-            transition: var(--transition);
-        }
-        
-        .tab.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .tool-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-        
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .tool-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-    </style>
+        </style>
     </head>
     <body>
         <!-- Contador de visitas -->
@@ -461,7 +63,7 @@
             <div id="header">
                 <div class="header-overlay"></div>
                 <div class="header-content">
-                    <h1><i class="fas fa-tools icon"></i>Herramientas de
+                    <h1> 🛠️ Herramientas de
                         Desarrollo</h1>
                     <p>Para estudiantes de nutrición</p>
                 </div>
@@ -499,7 +101,6 @@
                     </div>
 
                     <!-- Grid de herramientas -->
-                    
 
                     <!-- Tabla de comparación -->
                     <h3>Comparativa de Herramientas</h3>
@@ -537,24 +138,20 @@
                         </tr>
                     </table>
 
-                   
-
-
-                     <!-- Marquee -->
+                    <!-- Marquee -->
                     <div class="marquee-container">
                         <div class="marquee-content">
                             <i class="fas fa-bullhorn"></i> ¡Descarga estas
-                        herramientas gratuitas! | |
-                            <i class="fas fa-download"></i> Tutoriales de instalación
-                        disponibles
+                            herramientas gratuitas! | |
+                            <i class="fas fa-download"></i> Tutoriales de
+                            instalación
+                            disponibles
                         </div>
                     </div>
 
-
-                  
                     <!-- Video -->
                     <div class="multimedia">
-                        <h3><i class="fas fa-video"></i> Video: Instalación de
+                        <h3>🎥  Video: Instalación de
                             VS Code</h3>
                         <video width="100%" controls
                             style="border-radius: var(--radius);">
@@ -629,7 +226,7 @@
                         </audio>
                     </div>
 
-                    <h3>Herramientas Principales</h3>
+                    <h3>🛠 Herramientas Principales</h3>
                     <div class="tool-grid">
                         <div class="tool-card">
                             <div class="tool-icon"><i
@@ -641,7 +238,6 @@
                                 target="_blank" class="btn">Descargar</a>
                         </div>
 
-                     
                         <div class="tool-card">
                             <div class="tool-icon"><i
                                     class="fab fa-python"></i></div>
@@ -663,7 +259,6 @@
                         </div>
                     </div>
 
-                   
                 </div>
             </div>
 
